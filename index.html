@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bravo Barber Club | Barbearia Masculina</title>
+<meta name="description" content="Bravo Barber Club: barbearia masculina em São Paulo (projeto demonstrativo). Corte masculino, corte degradê, barba masculina e combo cabelo e barba com preços claros.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+:root{--bg:#0A0A0A;--bg2:#141414;--card:#1C1C1C;--gold:#C8A45D;--tx:#fff;--mut:#B8B8B8;--bd:#303030}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font:400 1rem/1.7 Montserrat,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1180px,92%);margin:0 auto}
+section{padding:clamp(64px,9vw,108px) 0}
+.alt{background:var(--bg2)}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;line-height:1;letter-spacing:.03em}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);max-width:20ch}
+.eb{display:inline-block;color:var(--gold);font-weight:600;font-size:.75rem;letter-spacing:.24em;margin-bottom:14px}
+.sub{color:var(--mut);max-width:58ch;margin-top:16px}
+.head{margin-bottom:46px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:48px;padding:0 1.7rem;border-radius:4px;font:700 .78rem Montserrat,sans-serif;letter-spacing:.12em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s,background .25s,color .25s,border-color .25s,box-shadow .25s}
+.pri{background:var(--gold);color:#0A0A0A}
+.pri:hover{background:#dcb870;transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,164,93,.28)}
+.ghost{border-color:var(--gold);color:var(--gold);background:transparent}
+.ghost:hover{background:var(--gold);color:#0A0A0A;transform:translateY(-2px)}
+.wa{background:#25D366;color:#06260f}.wa:hover{background:#2be071;transform:translateY(-2px)}
+.grid{display:grid;gap:22px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:30px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 20px 44px rgba(0,0,0,.55)}
+.card i{color:var(--gold);font-size:1.5rem;margin-bottom:18px;display:block}
+.card h3{font-size:1.6rem;margin-bottom:10px}.card p{color:var(--mut);font-size:.93rem}
+/* Imagens: se a foto não carregar, aparece um fundo elegante */
+.ph{position:relative;overflow:hidden;background:linear-gradient(145deg,#222,#111)}
+.ph::after{content:"\f0c4";font:900 2.2rem "Font Awesome 6 Free";color:rgba(200,164,93,.25);position:absolute;inset:0;display:grid;place-items:center;z-index:0}
+.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(10,10,10,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
+header.sc{background:rgba(10,10,10,.92);border-color:var(--bd)}
+.hb{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{text-decoration:none;display:flex;align-items:center;gap:12px;line-height:1}
+.logo .m{width:40px;height:40px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);transform:rotate(45deg);flex:none}
+.logo .m i{transform:rotate(-45deg);font-size:.95rem}
+.logo b{display:block;font:400 1.9rem 'Bebas Neue',sans-serif;letter-spacing:.14em}
+.logo small{display:block;font-size:.58rem;letter-spacing:.42em;color:var(--gold);font-weight:600;margin-top:2px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a:not(.btn){text-decoration:none;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);position:relative;transition:color .2s}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .25s}
+.nav a:not(.btn):hover{color:#fff}.nav a:not(.btn):hover::after{width:100%}
+.nav .btn{min-height:42px;font-size:.7rem;padding:0 1.3rem}
+.burger{display:none;width:46px;height:46px;background:none;border:1px solid var(--bd);border-radius:4px;color:var(--gold);font-size:1.1rem;cursor:pointer}
+
+#home{min-height:90vh;padding:120px 0 70px;display:flex;align-items:center;background:radial-gradient(55% 55% at 85% 40%,rgba(200,164,93,.1),transparent 70%),var(--bg)}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+#home h1{font-size:clamp(3.2rem,8vw,6.4rem);margin:6px 0 22px}
+#home h1 em{font-style:normal;color:var(--gold)}
+.slogan{font:italic 600 1.35rem 'Cormorant Garamond',serif;color:var(--gold);margin-bottom:18px}
+.lead{color:var(--mut);max-width:50ch}
+.ind{display:flex;flex-wrap:wrap;gap:10px 22px;margin:26px 0 32px;list-style:none}
+.ind li{font-size:.82rem;font-weight:600;display:flex;gap:8px;align-items:center}.ind i{color:var(--gold)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hi{position:relative;aspect-ratio:4/5;max-height:640px;width:100%}
+.hi::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:0;opacity:.6}
+.hi .ph{position:absolute;inset:0;z-index:1;box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.hi .ph::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(10,10,10,.05) 40%,rgba(10,10,10,.75)),radial-gradient(60% 50% at 80% 10%,rgba(200,164,93,.22),transparent)}
+.hi .tg{position:absolute;left:22px;bottom:20px;z-index:3;font:italic 600 1.3rem 'Cormorant Garamond',serif;color:#fff}
+
+#diferenciais .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.pt{list-style:none;max-width:900px}
+.pr{display:grid;grid-template-columns:1.1fr 1.6fr auto;gap:8px 28px;align-items:center;padding:24px 28px;background:var(--card);border:1px solid var(--bd);border-radius:6px;margin-bottom:14px;transition:border-color .3s,transform .3s;position:relative}
+.pr:hover{border-color:var(--gold);transform:translateX(4px)}
+.pr h3{font-size:1.7rem}
+.pr p{color:var(--mut);font-size:.9rem}
+.pr .v{font:400 2rem 'Bebas Neue',sans-serif;color:var(--gold);letter-spacing:.04em;white-space:nowrap}
+.pr.hl{border-color:var(--gold);background:linear-gradient(120deg,rgba(200,164,93,.14),var(--card) 60%)}
+.bdg{position:absolute;top:-11px;left:24px;background:var(--gold);color:#0A0A0A;font-size:.6rem;font-weight:700;letter-spacing:.14em;padding:3px 12px;border-radius:2px}
+.pcta{margin-top:30px}
+
+.gl{grid-template-columns:repeat(3,1fr)}
+.gl figure{border:1px solid var(--bd);border-radius:6px;overflow:hidden;background:var(--card);transition:border-color .3s}
+.gl figure:hover{border-color:var(--gold)}
+.gl .ph{aspect-ratio:4/5}
+.gl .ph::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,transparent 55%,rgba(10,10,10,.55));transition:opacity .4s}
+.gl figure:hover img{transform:scale(1.06)}
+.gl figcaption{padding:16px 20px;font:400 1.35rem 'Bebas Neue',sans-serif;letter-spacing:.08em;display:flex;justify-content:space-between;align-items:center}
+.gl figcaption span{font:600 .65rem Montserrat,sans-serif;color:var(--gold);letter-spacing:.18em}
+
+.ab{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.ab .ph{aspect-ratio:4/5;border:1px solid var(--bd);border-radius:6px}
+.ab p{color:var(--mut);margin-top:16px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
+.st div{border:1px solid var(--bd);border-radius:6px;padding:16px 12px;text-align:center;background:var(--card)}
+.st b{display:block;font:400 2.6rem 'Bebas Neue',sans-serif;color:var(--gold);line-height:1}
+.st span{font-size:.72rem;color:var(--mut);line-height:1.3;display:block;margin-top:6px}
+.ck{list-style:none;display:grid;gap:10px}
+.ck li{display:flex;gap:12px;align-items:center;font-weight:500;font-size:.93rem}.ck i{color:var(--gold)}
+.note{font-size:.72rem;color:#8a8a8a;margin-top:10px}
+
+.band{text-align:center;background:linear-gradient(rgba(10,10,10,.82),rgba(10,10,10,.92)),repeating-linear-gradient(45deg,#141414 0 12px,#101010 12px 24px);border-block:1px solid var(--gold)}
+.band h2{max-width:22ch;margin:0 auto}.band .sub{margin:16px auto 30px}
+
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:stretch}
+.info{display:grid;gap:22px;align-content:start}
+.info h3{font-size:2.2rem}
+.info ul{list-style:none;color:var(--mut);font-size:.93rem}
+.info li{display:flex;gap:12px;padding:6px 0}.info li i{color:var(--gold);width:18px;margin-top:5px}
+.info strong{color:#fff}
+.map{border:1px solid var(--bd);border-radius:10px;overflow:hidden;min-height:380px;background:var(--card);display:flex;flex-direction:column}
+.map iframe{border:0;width:100%;flex:1;min-height:340px;display:block;filter:grayscale(.3) contrast(1.05)}
+.map a{padding:12px 18px;font-size:.78rem;color:var(--mut);border-top:1px solid var(--bd)}
+.map a:hover{color:var(--gold)}
+.wc{margin-top:30px;padding:34px;border:1px solid var(--gold);border-radius:8px;background:linear-gradient(120deg,rgba(200,164,93,.14),var(--card));display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.wc h3{font-size:2.2rem}.wc p{color:var(--mut);max-width:48ch;margin-top:8px}
+
+footer{background:#000;padding:56px 0 100px;border-top:1px solid var(--bd)}
+.fb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px}
+.fb p{color:var(--mut);font-size:.9rem;margin-top:12px}
+.fl{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;align-self:center}.fl a{text-decoration:none;color:var(--mut);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}.fl a:hover{color:var(--gold)}
+.so{display:flex;gap:10px;align-self:center}
+.so a{width:44px;height:44px;border:1px solid var(--bd);border-radius:50%;display:grid;place-items:center;text-decoration:none;transition:background .25s,border-color .25s,color .25s}.so a:hover{background:var(--gold);border-color:var(--gold);color:#0A0A0A}
+.cp{margin-top:34px;padding-top:20px;border-top:1px solid var(--bd);color:#8a8a8a;font-size:.78rem}
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.5);transition:transform .25s,box-shadow .25s}
+.fab:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.4)}
+#toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);width:min(92%,420px);background:#1c1c1c;border:1px solid var(--gold);border-radius:8px;padding:14px 18px;font-size:.85rem;z-index:60;opacity:0;pointer-events:none;transition:.3s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:1020px){
+ .hero,.ab,.ct{grid-template-columns:1fr}
+ .hi{max-width:480px;margin:0 auto;max-height:none}.hi::before{inset:14px -10px -14px 10px}
+ .ab .ph{max-width:480px;margin:0 auto}
+ .gl{grid-template-columns:repeat(2,1fr)}
+ .burger{display:block}
+ .nav{position:fixed;top:74px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px 4% 24px;background:rgba(10,10,10,.97);border-bottom:1px solid var(--bd);transform:translateY(-130%);visibility:hidden;transition:transform .35s,visibility .35s}
+ .nav.open{transform:none;visibility:visible}
+ .nav a:not(.btn){padding:16px 4px;font-size:.9rem;border-bottom:1px solid var(--bd)}
+ .nav .btn{margin-top:18px}
+}
+@media(max-width:700px){
+ .btn{width:100%}.cta-row{flex-direction:column}
+ .pr{grid-template-columns:1fr auto;padding:22px 20px}.pr p{grid-column:1/-1;order:3}
+ .gl{gap:12px}.gl figcaption{padding:12px;font-size:1.05rem;flex-direction:column;align-items:flex-start;gap:2px}
+ .st{grid-template-columns:1fr}
+ .card,.wc{padding:24px}
+}
+@media(max-width:380px){.gl{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){
+ *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="top">
+ <div class="wrap hb">
+  <a class="logo" href="#home" aria-label="Bravo Barber Club, início">
+   <span class="m"><i class="fa-solid fa-scissors"></i></span>
+   <span><b>BRAVO</b><small>BARBER CLUB</small></span>
+  </a>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><i class="fa-solid fa-bars"></i></button>
+  <nav class="nav" id="nav" aria-label="Menu principal">
+   <a href="#home">Início</a><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+   <a class="btn pri" href="#contato">AGENDAR HORÁRIO</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+
+<section id="home" aria-labelledby="t-home">
+ <div class="wrap hero">
+  <div>
+   <span class="eb">BARBEARIA • ESTILO • PERSONALIDADE</span>
+   <p class="slogan">Estilo não se improvisa.</p>
+   <h1 id="t-home">SEU ESTILO.<br>SUA IDENTIDADE.<br><em>NOSSO TRABALHO.</em></h1>
+   <p class="lead">Cortes precisos, acabamento impecável e cuidado em cada detalhe. Descubra uma nova experiência em barbearia masculina.</p>
+   <ul class="ind"><li><i class="fa-solid fa-scissors"></i>Cortes modernos e clássicos</li><li><i class="fa-solid fa-scissors"></i>Acabamento profissional</li><li><i class="fa-solid fa-scissors"></i>Atendimento personalizado</li></ul>
+   <div class="cta-row"><a class="btn pri" href="#servicos">VER SERVIÇOS</a><a class="btn ghost" href="#sobre">CONHECER A BARBEARIA</a></div>
+  </div>
+  <!-- Para trocar a foto, altere o src da <img>. Fotos: Pexels (uso livre). -->
+  <div class="hi rv">
+   <div class="ph"><img src="https://images.pexels.com/photos/7697225/pexels-photo-7697225.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Barbeiro usando máquina para um corte masculino em barbearia moderna, vista lateral" fetchpriority="high" onerror="this.remove()"><span class="tg">Precisão em cada detalhe.</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section id="diferenciais" class="alt" aria-labelledby="t-dif">
+ <div class="wrap">
+  <div class="head rv"><span class="eb">DIFERENCIAIS</span><h2 id="t-dif">MAIS QUE UM CORTE. UMA EXPERIÊNCIA.</h2></div>
+  <div class="grid">
+   <article class="card rv"><i class="fa-solid fa-scissors"></i><h3>CORTES PRECISOS</h3><p>Técnicas de corte com atenção ao formato do rosto e ao estilo de cada cliente.</p></article>
+   <article class="card rv" style="--d:.08s"><i class="fa-solid fa-gem"></i><h3>ACABAMENTO IMPECÁVEL</h3><p>Detalhes bem executados para um visual alinhado e sofisticado.</p></article>
+   <article class="card rv" style="--d:.16s"><i class="fa-solid fa-user-tie"></i><h3>ESTILO PERSONALIZADO</h3><p>Cortes clássicos e modernos para diferentes preferências.</p></article>
+   <article class="card rv" style="--d:.24s"><i class="fa-solid fa-shield-halved"></i><h3>CUIDADO MASCULINO</h3><p>Um ambiente dedicado à aparência, ao cuidado pessoal e à confiança.</p></article>
+  </div>
+ </div>
+</section>
+
+<!-- ===== SERVIÇOS E PREÇOS ===== -->
+<section id="servicos" aria-labelledby="t-serv">
+ <div class="wrap">
+  <div class="head rv"><span class="eb">TABELA DE PREÇOS</span><h2 id="t-serv">SERVIÇOS E PREÇOS</h2><p class="sub">Escolha seu serviço e mantenha seu estilo em dia.</p></div>
+  <ul class="pt">
+   <li class="pr rv"><h3>Corte masculino</h3><p>Cortes clássicos, modernos e degradês</p><span class="v">R$ 40,00</span></li>
+   <li class="pr rv"><h3>Pézinho</h3><p>Acabamento e alinhamento do contorno</p><span class="v">R$ 20,00</span></li>
+   <li class="pr rv"><h3>Barba</h3><p>Aparação e definição da barba</p><span class="v">R$ 20,00</span></li>
+   <li class="pr hl rv"><span class="bdg">2 SERVIÇOS · PREÇO ESPECIAL</span><h3>Combo cabelo e barba</h3><p>Corte masculino e barba no mesmo atendimento</p><span class="v">R$ 50,00</span></li>
+  </ul>
+  <div class="pcta rv"><a class="btn pri" data-link="whatsapp" href="#"><i class="fa-brands fa-whatsapp"></i>QUERO AGENDAR</a></div>
+ </div>
+</section>
+
+<!-- ===== GALERIA ===== -->
+<section id="galeria" class="alt" aria-labelledby="t-gal">
+ <div class="wrap">
+  <div class="head rv"><span class="eb">GALERIA</span><h2 id="t-gal">NOSSO ESTILO EM CADA DETALHE</h2><p class="sub">Inspire-se em diferentes cortes e encontre o estilo que combina com você.</p></div>
+  <!-- Fotos de referência (Pexels). Troque o src de cada imagem pelas fotos do estilo correspondente. -->
+  <div class="grid gl">
+   <figure class="rv"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697225/pexels-photo-7697225.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barbeiro finalizando um corte degradê baixo (low fade) com máquina" onerror="this.remove()"></div><figcaption>Degradê baixo<span>LOW FADE</span></figcaption></figure>
+   <figure class="rv" style="--d:.08s"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697644/pexels-photo-7697644.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barbeiro desenhando o corte com máquina, referência de degradê médio (mid fade)" onerror="this.remove()"></div><figcaption>Degradê médio<span>MID FADE</span></figcaption></figure>
+   <figure class="rv" style="--d:.16s"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697219/pexels-photo-7697219.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barbeiro aparando o cabelo com precisão, referência de degradê alto (high fade)" onerror="this.remove()"></div><figcaption>Degradê alto<span>HIGH FADE</span></figcaption></figure>
+   <figure class="rv"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697226/pexels-photo-7697226.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barbeiro realizando um corte social clássico em cliente" onerror="this.remove()"></div><figcaption>Corte social clássico<span>CLÁSSICO</span></figcaption></figure>
+   <figure class="rv" style="--d:.08s"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697275/pexels-photo-7697275.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Barbeiro trabalhando um corte texturizado moderno" onerror="this.remove()"></div><figcaption>Texturizado moderno<span>TEXTURIZADO</span></figcaption></figure>
+   <figure class="rv" style="--d:.16s"><div class="ph"><img loading="lazy" src="https://images.pexels.com/photos/7697483/pexels-photo-7697483.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Cliente com barba sendo alinhada na barbearia" onerror="this.remove()"></div><figcaption>Corte com barba alinhada<span>BARBA</span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section id="sobre" aria-labelledby="t-sobre">
+ <div class="wrap ab">
+  <div class="ph rv"><img loading="lazy" src="https://images.pexels.com/photos/7697233/pexels-photo-7697233.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Barbeiro profissional realizando um corte masculino em ambiente bem iluminado" onerror="this.remove()"></div>
+  <div class="rv">
+   <span class="eb">SOBRE</span>
+   <h2 id="t-sobre">TRADIÇÃO NO DETALHE. MODERNIDADE NO ESTILO.</h2>
+   <p>A Bravo Barber Club é uma barbearia fictícia criada para representar uma experiência moderna de cuidado masculino.</p>
+   <p>Nossa proposta combina referências clássicas da barbearia com técnicas contemporâneas de corte, acabamento e personalização do visual.</p>
+   <p>Cada serviço é pensado para valorizar o estilo individual, com atenção aos detalhes e uma apresentação profissional em cada etapa do atendimento.</p>
+   <div class="st"><div><b>4</b><span>serviços principais</span></div><div><b>6</b><span>estilos em destaque</span></div><div><b>1</b><span>experiência personalizada</span></div></div>
+   <ul class="ck"><li><i class="fa-solid fa-check"></i>Atendimento personalizado</li><li><i class="fa-solid fa-check"></i>Cortes clássicos e modernos</li><li><i class="fa-solid fa-check"></i>Acabamento cuidadoso</li><li><i class="fa-solid fa-check"></i>Preços apresentados com transparência</li></ul>
+   <p class="note">Indicadores ilustrativos do conteúdo demonstrativo, não representam estatísticas de uma empresa real.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band" aria-labelledby="t-band">
+ <div class="wrap rv">
+  <h2 id="t-band">SEU PRÓXIMO CORTE COMEÇA AQUI.</h2>
+  <p class="sub">Escolha seu serviço, consulte os preços e entre em contato para combinar seu horário.</p>
+  <a class="btn pri" href="#contato">AGENDAR MEU CORTE</a>
+ </div>
+</section>
+
+<section id="contato" class="alt" aria-labelledby="t-ct">
+ <div class="wrap">
+  <div class="head rv"><span class="eb">LOCALIZAÇÃO</span><h2 id="t-ct">ENCONTRE A BRAVO</h2><p class="sub">Consulte a localização demonstrativa e entre em contato para informações sobre atendimento.</p></div>
+  <div class="ct">
+   <div class="info rv">
+    <h3>BRAVO BARBER CLUB</h3>
+    <ul>
+     <li><i class="fa-solid fa-location-dot"></i><span><strong>Endereço demonstrativo</strong><br>Avenida Paulista, região da Bela Vista, São Paulo — SP.</span></li>
+     <li><i class="fa-regular fa-clock"></i><span><strong>Horário demonstrativo</strong><br>Segunda a sexta: 09h às 20h<br>Sábado: 09h às 18h<br>Domingo: fechado</span></li>
+    </ul>
+    <p class="note">Endereço e horários são demonstrativos: a barbearia foi criada para apresentar um projeto web.</p>
+    <div><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Avenida+Paulista+Bela+Vista+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-map-location-dot"></i>ABRIR NO MAPA</a></div>
+   </div>
+   <div class="map rv" style="--d:.1s">
+    <iframe title="Mapa da Avenida Paulista, São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Avenida+Paulista,+S%C3%A3o+Paulo&output=embed"></iframe>
+    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Paulista+Bela+Vista+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer">O mapa não carregou? Abrir a localização no Google Maps</a>
+   </div>
+  </div>
+  <div class="wc rv">
+   <div><h3>VAMOS MARCAR SEU HORÁRIO?</h3><p>Entre em contato para consultar a disponibilidade e combinar seu próximo corte.</p></div>
+   <a class="btn wa" data-link="whatsapp" href="#"><i class="fa-brands fa-whatsapp"></i>FALAR PELO WHATSAPP</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fb">
+   <div><a class="logo" href="#home"><span class="m"><i class="fa-solid fa-scissors"></i></span><span><b>BRAVO</b><small>BARBER CLUB</small></span></a><p>Estilo, precisão e cuidado masculino.</p></div>
+   <ul class="fl"><li><a href="#home">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#contato">Contato</a></li></ul>
+   <div class="so">
+    <a data-link="instagram" href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+    <a data-link="facebook" href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+    <a data-link="tiktok" href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+    <a data-link="whatsapp" href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+   </div>
+  </div>
+  <p class="cp">© 2026 Bravo Barber Club. Projeto demonstrativo. Marca, endereço, horários e preços são fictícios, criados para portfólio de desenvolvimento web.</p>
+ </div>
+</footer>
+
+<a class="fab" data-link="whatsapp" href="#" aria-label="Falar pelo WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<div id="toast" role="status"></div>
+
+<script>
+/* =====================================================
+   CONFIGURAÇÃO — substitua os textos pelos links reais
+   (começando com https://). Ex.: "https://wa.me/5511999999999"
+   ===================================================== */
+const CONFIG = {
+  whatsapp:  "INSIRA O LINK DO WHATSAPP AQUI",
+  instagram: "INSIRA O LINK DO INSTAGRAM AQUI",
+  facebook:  "INSIRA O LINK DO FACEBOOK AQUI",
+  tiktok:    "INSIRA O LINK DO TIKTOK AQUI"
+};
+const isUrl=u=>/^https?:\/\//i.test(u);
+const toast=document.getElementById('toast');let tt;
+function showToast(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),4500)}
+
+document.querySelectorAll('[data-link]').forEach(a=>{
+  const k=a.dataset.link,u=CONFIG[k];
+  if(isUrl(u)){a.href=u;a.target='_blank';a.rel='noopener noreferrer'}
+  else a.addEventListener('click',e=>{e.preventDefault();showToast('Link de '+k+' ainda não configurado. Edite o objeto CONFIG no final do arquivo.')});
+});
+
+const nav=document.getElementById('nav'),burger=document.getElementById('burger');
+function setMenu(o){nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.querySelector('i').className=o?'fa-solid fa-xmark':'fa-solid fa-bars'}
+burger.addEventListener('click',()=>setMenu(!nav.classList.contains('open')));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+
+const hd=document.getElementById('top');
+const onScroll=()=>hd.classList.toggle('sc',scrollY>20);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((en,ob)=>en.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ob.unobserve(x.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(e=>io.observe(e));
+}else els.forEach(e=>e.classList.add('in'));
+</script>
+</body>
+</html>
